@@ -1,5 +1,4 @@
 django
 whitenoise
 gunicorn
-imagekit
-imagekit.models
+django-imagekit
