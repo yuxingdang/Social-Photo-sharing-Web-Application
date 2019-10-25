@@ -1,0 +1,32 @@
+<div class="navbar default navbar-fixed-top" id="main-nav">
+    <div class="container desktop">
+        <div class="navbar-header">
+            <a href="{% url 'posts' %}" class="navbar-brand">Post My Favorites Online </a>
+        </div>
+
+        <div id="navbar-main">
+            <ul class="nav justify-content-end">
+                {% if request.user.is_authenticated %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'posts' %}">
+                        <i class="fa fa-home {% if request.resolver_match.url_name == 'home' %}active{% endif %}" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'explore' %}"><i class="fa fa-search"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'make_post' %}"><i class="fa fa-plus"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'user_detail' user.id %}"><i class="fa fa-user"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}"><i class="fa fa-sign-out-alt"></i></a></li>
+                {% else %}
+                    <ul class="nav nav-tabs">
+                        <li class="nav nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'signup' %}">signup</a>
+                        </li>
+                    </ul>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
