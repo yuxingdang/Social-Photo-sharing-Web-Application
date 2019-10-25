@@ -3,3 +3,4 @@ whitenoise
 gunicorn
 django-imagekit
 Pillow
+django-annoying
