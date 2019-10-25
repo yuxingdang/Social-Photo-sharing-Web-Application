@@ -19,7 +19,7 @@ from django.urls import include, path
 from insta.views import HelloWorld, PostsView, PostDetailView, PostCreatelView, PostUpdatelView, PostDeletelView, addLike, addComment, UserDetailView, ProfileEditlView, toggleFollow, ExploreView
 
 urlpatterns = [
-    path('post/', PostsView.as_view(), name='posts'),
+    path('', PostsView.as_view(), name='posts'),
     path('post/<int:pk>/', PostDetailView.as_view(), name='post_detail'),
     path('post/new/', PostCreatelView.as_view(), name='make_post'),
     path('post/update/<int:pk>/', PostUpdatelView.as_view(), name='post_update'),
