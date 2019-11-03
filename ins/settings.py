@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'insta',
-    'imagekit'
+    'imagekit',
+    'rest_framework',
+    'api',
 ]
 
 MIDDLEWARE = [

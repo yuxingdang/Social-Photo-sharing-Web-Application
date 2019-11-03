@@ -5,6 +5,10 @@
 {% block content %}
 
 <div class="row single-post">
+    <div>
+        <a href="{% url 'post_update' object.pk %}">Update Post</a>
+        <a href="{% url 'post_delete' object.pk %}">Delete Post</a>
+    </div>
     <div class="single-post-card view-update {{ object.pk }}">
         <div class="header">
             <a href="{% url 'user_detail' object.author.pk %}">
@@ -16,6 +20,9 @@
         </div>
         <div class="image__wrapper">
             <img class="card__main-image" src="http://{{ request.META.HTTP_HOST }}/{{object.image.url}}" width='1000', height='1000'>
+        </div>
+        <div>
+            {{ object.title }}
         </div>
         <div class="comments-portion">
             <div class="likes-timestamp-row">
@@ -31,7 +38,7 @@
             <ul class="comment-list">
                 {% for comment in object.comments.all %}
                 <li class="comment-list__comment">
-                    <a href="{% url 'helloworld' %}" class="user">
+                    <a href="{% url 'user_detail' comment.user.pk %}" class="user">
                         {{ comment.user.username }}
                     </a>
                     <span class="comment">{{ comment.comment }}</span>

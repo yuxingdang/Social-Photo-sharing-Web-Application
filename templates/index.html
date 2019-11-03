@@ -25,6 +25,7 @@
 
                 <a href="{% url 'post_detail' post.pk %}">
                     <img class="card__main-image" src="/{{ post.image }}">
+                    {{ post.title }}
                 </a>
 
                 <div class="card__panel-body">
